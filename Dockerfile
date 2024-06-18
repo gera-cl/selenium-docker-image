@@ -12,4 +12,4 @@ RUN apt-get update -qqy \
         && sed -i 's/"$HERE\/chrome"/"$HERE\/chrome" --no-sandbox/g' /opt/google/chrome/google-chrome
 
 COPY pom.xml .
-RUN mvn dependency:resolve
+RUN mvn --batch-mode --no-transfer-progress dependency:resolve
